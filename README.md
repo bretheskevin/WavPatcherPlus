@@ -1,9 +1,11 @@
-**WavPatcherPlus**  
+WavPatcherPlus 1.0.0g
+-----------------
 _Fork of [camm9909/WavPatcher](https://github.com/camm9909/WavPatcher)_
 
 This is a fork of the original WavPatcher project. The purpose of **WavPatcherPlus** is to extend the tool's functionality by automatically converting 48 kHz WAV files to 44.1 kHz for compatibility with certain CDJ/XDJ players and other equipment that require 44.1 kHz sample rates. All other original behaviors—including patching the `WAV_EXTENSIBLE` header to standard PCM—remain intact.
 
 You will need to install ffmpeg binaries to downsample mp3 files to 44.1 kHz. (Only if you run this tool in development mode)
+[Download ffmpeg binaries](https://www.ffmpeg.org/download.html)
 
 Expected project path for the binaries :
 ### Windows
