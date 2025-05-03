@@ -1,1 +1,7 @@
 .idea
+ffmpeg/win/ffmpeg.exe
+ffmpeg/win/ffprobe.exe
+ffmpeg/mac/ffmpeg
+ffmpeg/mac/ffprobe
+ffmpeg/linux/ffmpeg
+ffmpeg/linux/ffprobe

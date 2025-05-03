@@ -19,6 +19,12 @@ def resource_path(relative):
 if sys.platform.startswith('win'):
     ffmpeg_exe = resource_path('ffmpeg/win/ffmpeg.exe')
     ffprobe_exe = resource_path('ffmpeg/win/ffprobe.exe')
+elif sys.platform == 'darwin':
+    ffmpeg_exe = resource_path('ffmpeg/mac/ffmpeg')
+    ffprobe_exe = resource_path('ffmpeg/mac/ffprobe')
+else:
+    ffmpeg_exe = resource_path('ffmpeg/linux/ffmpeg')
+    ffprobe_exe = resource_path('ffmpeg/linux/ffprobe')
 
 os.environ['PATH'] = os.path.dirname(ffmpeg_exe) + os.pathsep + os.environ.get('PATH', '')
 os.environ['FFMPEG_BINARY'] = ffmpeg_exe
