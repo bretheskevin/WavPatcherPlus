@@ -30,6 +30,7 @@ os.environ['FFMPEG_BINARY'] = ffmpeg_exe
 os.environ['FFPROBE_BINARY'] = ffprobe_exe
 
 from pydub import AudioSegment
+from pydub.utils import mediainfo
 
 AudioSegment.converter = ffmpeg_exe
 AudioSegment.ffmpeg = ffmpeg_exe
@@ -229,7 +230,14 @@ class WavPatcherApp:
                     audio_44100 = audio.set_frame_rate(44100)
                     if not self.sim_conv:
                         dp = os.path.join(dest_dir, p.name)
-                        audio_44100.export(dp, format='mp3')
+                        info = mediainfo(str(p))
+                        br = info.get('bit_rate')
+                        if br:
+                            kb = int(br) // 1000
+                            bitrate_arg = f"{kb}k"
+                            audio_44100.export(dp, format='mp3', bitrate=bitrate_arg)
+                        else:
+                            audio_44100.export(dp, format='mp3')
                 c += 1
                 self.root.after(0, lambda c=c, total=total, rel=rel, p=p: self.log_conv(f"Processed: {rel}/{p.name} ({c}/{total})"))
             except Exception as e:

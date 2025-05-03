@@ -1,7 +1,8 @@
 .idea
-ffmpeg/win/ffmpeg.exe
-ffmpeg/win/ffprobe.exe
-ffmpeg/mac/ffmpeg
-ffmpeg/mac/ffprobe
-ffmpeg/linux/ffmpeg
-ffmpeg/linux/ffprobe
+ffmpeg
+!ffmpeg/win/.keep
+!ffmpeg/mac/.keep
+!ffmpeg/linux/.keep
+build
+dist
+__pycache__
