@@ -7,7 +7,6 @@ from pathlib import Path
 from tkinter import *
 from tkinter import filedialog, ttk
 from tkinter.scrolledtext import ScrolledText
-from pydub import AudioSegment
 
 def resource_path(relative):
     try:
@@ -29,6 +28,8 @@ else:
 os.environ['PATH'] = os.path.dirname(ffmpeg_exe) + os.pathsep + os.environ.get('PATH', '')
 os.environ['FFMPEG_BINARY'] = ffmpeg_exe
 os.environ['FFPROBE_BINARY'] = ffprobe_exe
+
+from pydub import AudioSegment
 
 AudioSegment.converter = ffmpeg_exe
 AudioSegment.ffmpeg = ffmpeg_exe
