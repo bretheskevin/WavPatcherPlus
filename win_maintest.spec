@@ -3,7 +3,9 @@
 block_cipher = None
 a = Analysis(['maintest.py', 'win_maintest.spec'],
              pathex=['.'],
-             binaries=[],
+             binaries=[
+             ('ffmpeg/win/ffmpeg.exe', 'ffmpeg/win')
+             ],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
