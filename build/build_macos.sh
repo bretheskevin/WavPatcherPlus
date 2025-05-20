@@ -1,5 +1,4 @@
 # sh script
-cd build
-sh build_macos.sh
-cd ..
+rm -rf build/
+python3 setup.py py2app --packages=PIL
 # ./dist/WavPatcher.app/Contents/MacOS/WavPatcher
