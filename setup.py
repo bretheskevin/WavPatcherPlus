@@ -7,7 +7,7 @@ Usage:
 
 from setuptools import setup
 
-APP = ['maintest.py']
+APP = ['main.py']
 DATA_FILES = [
 	('img', ['img/wp_emboss.png']
 )]
